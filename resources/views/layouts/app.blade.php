@@ -14,6 +14,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
+        <link rel="stylesheet" href=" {{asset("vendor/fontawesome-free-6.1.2-web/css/all.min.css")}} ">
+
         @livewireStyles
     </head>
     <body class="font-sans antialiased">

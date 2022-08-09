@@ -19,14 +19,44 @@
 
                 <thead class="bg-gray-50">
                     <tr>
-                        <th scope="col" class="px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking">
+                        <th scope="col" class="cursor-pointer px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking" wire:click="order('id')">
                         ID
+                        {{-- sort --}}
+                        @if ($sort == 'id')
+                            @if ($direction == 'desc')
+                                <i class="fas fa-sort-alpha-down-alt float-right"></i>
+                            @else
+                                <i class="fas fa-sort-alpha-up-alt float-right"></i>
+                            @endif
+                        @else
+                            <i class="fas fa-sort float-right"></i>
+                        @endif
                         </th>
-                        <th scope="col" class="px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking">
+                        <th scope="col" class="cursor-pointer px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking" wire:click="order('title')">
                         Title
+                        {{-- sort --}}
+                        @if ($sort == 'title')
+                            @if ($direction == 'desc')
+                                <i class="fas fa-sort-alpha-down-alt float-right"></i>
+                            @else
+                                <i class="fas fa-sort-alpha-up-alt float-right"></i>
+                            @endif
+                        @else
+                            <i class="fas fa-sort float-right"></i>
+                        @endif
                         </th>
-                        <th scope="col" class="px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking">
+                        <th scope="col" class="cursor-pointer px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking" wire:click="order('content')">
                         Content
+                        {{-- sort --}}
+                        @if ($sort == 'content')
+                            @if ($direction == 'desc')
+                                <i class="fas fa-sort-alpha-down-alt float-right"></i>
+                            @else
+                                <i class="fas fa-sort-alpha-up-alt float-right"></i>
+                            @endif
+                        @else
+                            <i class="fas fa-sort float-right"></i>
+                        @endif
                         </th>
                         <th scope="col" class="relative px-6 py-3">
                             <span class="sr-only">Edit</span>
