@@ -9,9 +9,10 @@
 
         <x-table>
 
-            <div class="px-6 py-4">
+            <div class="px-6 py-4 flex item-center">
               {{--  <input type="text" wire:model="search">  --}}
-                <x-jet-input class="w-full" placeholder="Que Busca" type="text" wire:model="search"></x-jet-input>                
+                <x-jet-input class="flex-1 mr-4" placeholder="Que Busca" type="text" wire:model="search"></x-jet-input>                
+                @livewire('create-post')
             </div>
 
             @if($posts->count())
@@ -19,7 +20,7 @@
 
                 <thead class="bg-gray-50">
                     <tr>
-                        <th scope="col" class="cursor-pointer px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking" wire:click="order('id')">
+                        <th scope="col" class="w-24 cursor-pointer px-6 py-6 text-left text-xs font-medium text-gray-500 uppercase tracking" wire:click="order('id')">
                         ID
                         {{-- sort --}}
                         @if ($sort == 'id')
