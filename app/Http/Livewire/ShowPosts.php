@@ -11,8 +11,9 @@ class ShowPosts extends Component
     public $sort = 'id';
     public $direction = 'desc';
 
-/*
-    public functio mount()
+    protected $listeners = ['render' => 'render']; // cuando escuche un evento de nombre render (creado por otro componente) ejecute el metodo render de aca
+
+/*  public functio mount()
     {}*/
 
     public function render()

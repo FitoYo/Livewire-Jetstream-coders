@@ -85,8 +85,8 @@
                                 {{$post->content}}
                             </div>
                         </td>
-                        <td class="px-6 py-4 text-right text-sm font-medium">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        <td class="px-6 py-4 text-sm font-medium w-24">
+                            @livewire('edit-post', ['post' => $post], key($post->id)) {{--componente de anidamiento. necesitamos pasarle una key unica de referencia--}}
                         </td>
                     </tr>                        
                     @endforeach

@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <!-- Styles -->
         <link rel="stylesheet" href=" {{asset("vendor/fontawesome-free-6.1.2-web/css/all.min.css")}} ">
@@ -42,5 +43,15 @@
         @stack('modals')
 
         @livewireScripts
+        <script>
+            // esta funcion de LW permite escuchar evento lanzado LW como script. el 1 parametro es el nombre de evento y 2 la funcion de lo que se ejecutara
+            Livewire.on('alert', function(message){
+                Swal.fire(
+                    'Good job!',
+                    message,
+                    'success'
+                    )
+            })
+        </script>
     </body>
 </html>
